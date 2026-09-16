@@ -1,0 +1,1509 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Conga Digital Commerce 202609.1.0 on Conga Revenue Lifecycle Platform</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+        <link rel="stylesheet" href="../styles/material.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">Conga Digital Commerce 202609.1.0 on Conga Revenue Lifecycle Platform</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  LocationPickerComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>projects/congarevenuecloud/elements/src/lib/location-picker/location-picker.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Description</h3>
+    </p>
+    <p class="comment">
+        <p>The Location picker component renders a searchable dropdown of the account&#39;s locations and
+lets the user create a new location inline. It works as a form control.</p>
+<p>When opened it loads the most recently created locations (limited by <code>initialCount</code>). Typing in
+the search box runs a debounced server-side search. A footer action opens an &quot;Add new location&quot;
+modal that creates the Location + AccountLocation and selects it on save.</p>
+<h3>Usage</h3>
+
+<div><pre class="line-numbers"><code class="language-typescript">import { LocationPickerModule } from &#39;&#64;congarevenuecloud/elements&#39;;
+
+&#64;NgModule({
+imports: [LocationPickerModule, ...]
+})
+export class AppModule {}</code></pre></div><div><pre class="line-numbers"><code class="language-html">```html
+&lt;apt-location-picker
+[(ngModel)]=&quot;order.Location&quot;
+(locationChange)=&quot;onShippingLocationChange()&quot;
+[label]=&quot;&#39;CART.SHIPPING_LOCATION&#39; | translate&quot;
+[required]=&quot;true&quot;&gt;
+&lt;/apt-location-picker&gt;</code></pre></div><div><pre class="line-numbers"><code class="language-none"></code></pre></div>
+    </p>
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank" >ControlValueAccessor</a></code>
+                    <code><a href="https://angular.io/api/forms/Validator" target="_blank" >Validator</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnChanges" target="_blank" >OnChanges</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+            <tr>
+                <td class="col-md-3">changeDetection</td>
+                <td class="col-md-9"><code>ChangeDetectionStrategy.OnPush</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">encapsulation</td>
+                <td class="col-md-9"><code>ViewEncapsulation.None</code></td>
+            </tr>
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../classes/Location.html" target="_self" >{
+    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() &#x3D;&gt; LocationPickerComponent), multi: true
+}</a></code>
+                                <code><a href="../classes/Location.html" target="_self" >{
+    provide: NG_VALIDATORS, useExisting: forwardRef(() &#x3D;&gt; LocationPickerComponent), multi: true
+}</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>apt-location-picker</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./location-picker.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./location-picker.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#compareLocations" >compareLocations</a>
+                            </li>
+                            <li>
+                                <a href="#loading" >loading</a>
+                            </li>
+                            <li>
+                                <a href="#locations" >locations</a>
+                            </li>
+                            <li>
+                                <a href="#newLocation" >newLocation</a>
+                            </li>
+                            <li>
+                                <a href="#saving" >saving</a>
+                            </li>
+                            <li>
+                                <a href="#selectedLocation" >selectedLocation</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#closeAddLocationModal" >closeAddLocationModal</a>
+                            </li>
+                            <li>
+                                <a href="#getAddress" >getAddress</a>
+                            </li>
+                            <li>
+                                <a href="#isNewLocationValid" >isNewLocationValid</a>
+                            </li>
+                            <li>
+                                <a href="#onOpen" >onOpen</a>
+                            </li>
+                            <li>
+                                <a href="#onSearchChange" >onSearchChange</a>
+                            </li>
+                            <li>
+                                <a href="#openAddLocationModal" >openAddLocationModal</a>
+                            </li>
+                            <li>
+                                <a href="#saveNewLocation" >saveNewLocation</a>
+                            </li>
+                            <li>
+                                <a href="#selectLocation" >selectLocation</a>
+                            </li>
+                            <li>
+                                <a href="#validate" >validate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#accountId" >accountId</a>
+                            </li>
+                            <li>
+                                <a href="#disabled" >disabled</a>
+                            </li>
+                            <li>
+                                <a href="#initialCount" >initialCount</a>
+                            </li>
+                            <li>
+                                <a href="#label" >label</a>
+                            </li>
+                            <li>
+                                <a href="#placeholder" >placeholder</a>
+                            </li>
+                            <li>
+                                <a href="#required" >required</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#locationChange" >locationChange</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(accountLocationService: <a href="../injectables/AccountLocationManagementService.html" target="_self">AccountLocationManagementService</a>, modalService: BsModalService, cdr: <a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank">ChangeDetectorRef</a>, exceptionService: <a href="../injectables/ExceptionService.html" target="_self">ExceptionService</a>)</code>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>accountLocationService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/AccountLocationManagementService.html" target="_self" >AccountLocationManagementService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>modalService</td>
+                                                  
+                                                        <td>
+                                                                    <code>BsModalService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>cdr</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/ChangeDetectorRef" target="_blank" >ChangeDetectorRef</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>exceptionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ExceptionService.html" target="_self" >ExceptionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="accountId"></a>
+                        <b>accountId</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Optional account ID. When omitted the current account from the session is used.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="disabled"></a>
+                        <b>disabled</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Disables interaction with the picker.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="initialCount"></a>
+                        <b>initialCount</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>100</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Number of most-recently-created locations to show before searching.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="label"></a>
+                        <b>label</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Label displayed above the picker.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="placeholder"></a>
+                        <b>placeholder</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Placeholder shown in the control when no location is selected.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="required"></a>
+                        <b>required</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Whether the field is required (renders the required asterisk).</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="locationChange"></a>
+                        <b>locationChange</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>EventEmitter&lt;AccountLocation&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description"><p>Emits the selected <code>AccountLocation</code> whenever the selection changes.</p>
+</div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="closeAddLocationModal"></a>
+                    <span class="name">
+                        <span ><b>closeAddLocationModal</b></span>
+                        <a href="#closeAddLocationModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>closeAddLocationModal()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Closes the &quot;Add new location&quot; modal.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAddress"></a>
+                    <span class="name">
+                        <span ><b>getAddress</b></span>
+                        <a href="#getAddress"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getAddress(location: <a href="../classes/AccountLocation.html" target="_self">AccountLocation</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Builds a single-line, comma-separated address for display.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The account location whose address is formatted.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A comma-separated address string, or an empty string when no location detail is present.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isNewLocationValid"></a>
+                    <span class="name">
+                        <span ><b>isNewLocationValid</b></span>
+                        <a href="#isNewLocationValid"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>isNewLocationValid()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Validates that all required fields of the draft location are filled.</p>
+</div>
+
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>True when the draft location has all required fields populated.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onOpen"></a>
+                    <span class="name">
+                        <span ><b>onOpen</b></span>
+                        <a href="#onOpen"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onOpen()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Loads the initial locations the first time the dropdown is opened.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onSearchChange"></a>
+                    <span class="name">
+                        <span ><b>onSearchChange</b></span>
+                        <a href="#onSearchChange"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>onSearchChange(term: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Queues a debounced server-side search as the user types in the dropdown.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>term</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The search text entered by the user.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="openAddLocationModal"></a>
+                    <span class="name">
+                        <span ><b>openAddLocationModal</b></span>
+                        <a href="#openAddLocationModal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>openAddLocationModal()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Opens the &quot;Add new location&quot; modal with a fresh draft.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saveNewLocation"></a>
+                    <span class="name">
+                        <span ><b>saveNewLocation</b></span>
+                        <a href="#saveNewLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>saveNewLocation()</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Creates the location + account location, then selects the newly created one.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectLocation"></a>
+                    <span class="name">
+                        <span ><b>selectLocation</b></span>
+                        <a href="#selectLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectLocation(location: <a href="../classes/AccountLocation.html" target="_self">AccountLocation</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Selects a location, updates the form value and emits the change.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>location</td>
+                                    <td>
+                                                <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The account location chosen by the user.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validate"></a>
+                    <span class="name">
+                        <span ><b>validate</b></span>
+                        <a href="#validate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>validate(control: <a href="https://angular.io/api/forms/AbstractControl" target="_blank">AbstractControl</a>)</code>
+                </td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Validates the control: when <code>required</code> is set and no location is selected the control is invalid.</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                    <td>Description</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>control</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/AbstractControl" target="_blank" >AbstractControl</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                    <td>
+                                        <p>The form control bound to this picker.</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>    <code>ValidationErrors | null</code>
+
+                    </div>
+                    <div class="io-description">
+                        <p>A validation error map when the field is required but no location is selected, otherwise <code>null</code>.</p>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="compareLocations"></a>
+                    <span class="name">
+                        <span ><b>compareLocations</b></span>
+                        <a href="#compareLocations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>() &#x3D;&gt; {...}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Compares locations by Id so the current value stays highlighted in the list.</p>
+</div>
+                </td>
+            </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <div class="io-description">
+                                <b>Parameters :</b>
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                            <tr>
+                                                    <td>a</td>
+                                                    <td>
+                                                            <code><p>First location to compare.</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                    <td>b</td>
+                                                    <td>
+                                                            <code><p>Second location to compare.</p>
+</code>
+                                                    </td>
+                                            </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </td>
+                </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loading"></a>
+                    <span class="name">
+                        <span ><b>loading</b></span>
+                        <a href="#loading"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Whether a fetch/search is in progress.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="locations"></a>
+                    <span class="name">
+                        <span ><b>locations</b></span>
+                        <a href="#locations"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>Array&lt;AccountLocation&gt;</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Locations currently shown in the dropdown.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="newLocation"></a>
+                    <span class="name">
+                        <span ><b>newLocation</b></span>
+                        <a href="#newLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/Location.html" target="_self" >Location</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Location()</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Draft location for the &quot;Add new location&quot; modal.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="saving"></a>
+                    <span class="name">
+                        <span ><b>saving</b></span>
+                        <a href="#saving"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Whether a save is in progress.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectedLocation"></a>
+                    <span class="name">
+                        <span ><b>selectedLocation</b></span>
+                        <a href="#selectedLocation"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/AccountLocation.html" target="_self" >AccountLocation</a></code>
+
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Currently selected account location.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;div class&#x3D;&quot;location-picker w-100&quot; [class.disabled]&#x3D;&quot;disabled&quot;&gt;
+  @if (label) {
+    &lt;label class&#x3D;&quot;mutedLabels mb-1 d-block location-picker__label&quot;&gt;
+      {{ label }}
+      @if (required) {
+        &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+      }
+    &lt;/label&gt;
+  }
+
+  &lt;ng-select class&#x3D;&quot;location-picker__select form-control p-0&quot;
+    [items]&#x3D;&quot;locations&quot;
+    bindLabel&#x3D;&quot;Name&quot;
+    [compareWith]&#x3D;&quot;compareLocations&quot;
+    [clearable]&#x3D;&quot;!!selectedLocation&quot;
+    [(ngModel)]&#x3D;&quot;selectedLocation&quot;
+    [loading]&#x3D;&quot;loading&quot;
+    [disabled]&#x3D;&quot;disabled&quot;
+    [required]&#x3D;&quot;required&quot;
+    [placeholder]&#x3D;&quot;placeholder || (&#x27;LOCATION_PICKER.PLACEHOLDER&#x27; | translate)&quot;
+    [notFoundText]&#x3D;&quot;&#x27;LOCATION_PICKER.NO_RESULTS&#x27; | translate&quot;
+    [loadingText]&#x3D;&quot;&#x27;LOCATION_PICKER.LOADING&#x27; | translate&quot;
+    (open)&#x3D;&quot;onOpen()&quot;
+    (search)&#x3D;&quot;onSearchChange($event.term)&quot;
+    (change)&#x3D;&quot;selectLocation($event)&quot;&gt;
+
+    &lt;ng-template ng-label-tmp let-item&#x3D;&quot;item&quot;&gt;
+      &lt;span class&#x3D;&quot;fw-bold&quot;&gt;{{ item.Name }}&lt;/span&gt;
+      @if (getAddress(item)) {
+        &lt;span class&#x3D;&quot;text-muted&quot;&gt; — {{ getAddress(item) }}&lt;/span&gt;
+      }
+    &lt;/ng-template&gt;
+
+    &lt;ng-template ng-option-tmp let-item&#x3D;&quot;item&quot;&gt;
+      &lt;div class&#x3D;&quot;fw-bold text-truncate&quot;&gt;{{ item.Name }}&lt;/div&gt;
+      &lt;div class&#x3D;&quot;text-muted small text-truncate&quot;&gt;{{ getAddress(item) }}&lt;/div&gt;
+    &lt;/ng-template&gt;
+
+    &lt;ng-template ng-footer-tmp&gt;
+      &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-link text-decoration-none w-100 text-start px-2 py-1&quot;
+        (click)&#x3D;&quot;openAddLocationModal()&quot;&gt;
+        &lt;i class&#x3D;&quot;fa fa-plus me-2&quot;&gt;&lt;/i&gt;{{ &#x27;LOCATION_PICKER.ADD_NEW&#x27; | translate }}
+      &lt;/button&gt;
+    &lt;/ng-template&gt;
+  &lt;/ng-select&gt;
+&lt;/div&gt;
+
+&lt;!-- Add New Location modal --&gt;
+&lt;ng-template #addLocationTemplate&gt;
+  &lt;div class&#x3D;&quot;modal-header border-0 p-0&quot;&gt;
+    &lt;button type&#x3D;&quot;button&quot; class&#x3D;&quot;btn-close btn-close-white close-button float-end pe-3 ps-0&quot;
+      aria-label&#x3D;&quot;Close&quot; (click)&#x3D;&quot;closeAddLocationModal()&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class&#x3D;&quot;modal-body bg-white py-4&quot;&gt;
+    &lt;h6 class&#x3D;&quot;modal-title fw-bold pb-3&quot;&gt;{{ &#x27;LOCATION_PICKER.ADD_MODAL_TITLE&#x27; | translate }}&lt;/h6&gt;
+
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.LOCATION_NAME&#x27; | translate }}
+        &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+      &lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;locationName&quot; [(ngModel)]&#x3D;&quot;newLocation.Name&quot;
+        [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.LOCATION_NAME_PLACEHOLDER&#x27; | translate&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.STREET&#x27; | translate }}
+        &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+      &lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;street&quot; [(ngModel)]&#x3D;&quot;newLocation.Street&quot;
+        [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.STREET_PLACEHOLDER&#x27; | translate&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;mb-3&quot;&gt;
+      &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.ADDRESS_LINE2&#x27; | translate }}&lt;/label&gt;
+      &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;addressLine2&quot; [(ngModel)]&#x3D;&quot;newLocation.AddressLine&quot;
+        [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.ADDRESS_LINE2_PLACEHOLDER&#x27; | translate&quot; /&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-6 mb-3&quot;&gt;
+        &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.CITY&#x27; | translate }}
+          &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;city&quot; [(ngModel)]&#x3D;&quot;newLocation.City&quot;
+          [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.CITY_PLACEHOLDER&#x27; | translate&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-6 mb-3&quot;&gt;
+        &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.STATE&#x27; | translate }}
+          &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;state&quot; [(ngModel)]&#x3D;&quot;newLocation.State&quot;
+          [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.STATE_PLACEHOLDER&#x27; | translate&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;row&quot;&gt;
+      &lt;div class&#x3D;&quot;col-md-6 mb-3&quot;&gt;
+        &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.ZIP&#x27; | translate }}
+          &lt;i class&#x3D;&quot;fa fa-asterisk text-danger fw-normal custom-asterisk p-1&quot;&gt;&lt;/i&gt;
+        &lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;zip&quot; [(ngModel)]&#x3D;&quot;newLocation.PostalCode&quot;
+          [placeholder]&#x3D;&quot;&#x27;LOCATION_PICKER.ZIP_PLACEHOLDER&#x27; | translate&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;col-md-6 mb-3&quot;&gt;
+        &lt;label class&#x3D;&quot;mb-1 d-block&quot;&gt;{{ &#x27;LOCATION_PICKER.COUNTRY&#x27; | translate }}&lt;/label&gt;
+        &lt;input type&#x3D;&quot;text&quot; class&#x3D;&quot;form-control&quot; name&#x3D;&quot;country&quot; [(ngModel)]&#x3D;&quot;newLocation.Country&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class&#x3D;&quot;d-flex justify-content-end mt-2&quot;&gt;
+      &lt;button class&#x3D;&quot;btn btn-outline-secondary me-2&quot; [disabled]&#x3D;&quot;saving&quot; (click)&#x3D;&quot;closeAddLocationModal()&quot;&gt;
+        {{ &#x27;COMMON.CANCEL&#x27; | translate }}
+      &lt;/button&gt;
+      &lt;button class&#x3D;&quot;btn btn-primary&quot; [disabled]&#x3D;&quot;!isNewLocationValid() || saving&quot; (click)&#x3D;&quot;saveNewLocation()&quot;&gt;
+        @if (saving) {
+          &lt;i class&#x3D;&quot;fa fa-spinner fa-spin me-1&quot;&gt;&lt;/i&gt;
+        }
+        {{ &#x27;LOCATION_PICKER.SAVE&#x27; | translate }}
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/ng-template&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./location-picker.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.location-picker {
+  &amp;.disabled {
+    opacity: 0.65;
+    pointer-events: none;
+  }
+
+  .custom-asterisk {
+    font-size: 8px;
+  }
+
+  // Let the Bootstrap .form-control border show and suppress ng-select&#x27;s own container border so the
+  // control matches sibling form fields.
+  ng-select.form-control {
+    height: calc(1.5em + 0.75rem + 2px);
+
+    .ng-select-container {
+      height: 100%;
+      min-height: 100%;
+      border: none;
+      background-color: transparent;
+    }
+  }
+}
+
+// Modal renders outside the component DOM (via BsModalService), so scope asterisk sizing to its dialog class.
+.location-picker-modal .custom-asterisk {
+  font-size: 8px;
+}
+
+// ngx-bootstrap doesn&#x27;t raise z-index or add a backdrop for stacked modals, so raise this modal above a host modal.
+.modal:has(&gt; .modal-dialog.location-picker-modal) {
+  z-index: 1065;
+}
+
+// Dim the host ourselves when stacked on top of one.
+.modal:has(&gt; .modal-dialog:not(.location-picker-modal)) ~ .modal:has(&gt; .modal-dialog.location-picker-modal) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><div class="location-picker w-100" [class.disabled]="disabled">  @if (label) {    <label class="mutedLabels mb-1 d-block location-picker__label">      {{ label }}      @if (required) {        <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>      }    </label>  }  <ng-select class="location-picker__select form-control p-0"    [items]="locations"    bindLabel="Name"    [compareWith]="compareLocations"    [clearable]="!!selectedLocation"    [(ngModel)]="selectedLocation"    [loading]="loading"    [disabled]="disabled"    [required]="required"    [placeholder]="placeholder || (\'LOCATION_PICKER.PLACEHOLDER\' | translate)"    [notFoundText]="\'LOCATION_PICKER.NO_RESULTS\' | translate"    [loadingText]="\'LOCATION_PICKER.LOADING\' | translate"    (open)="onOpen()"    (search)="onSearchChange($event.term)"    (change)="selectLocation($event)">    <ng-template ng-label-tmp let-item="item">      <span class="fw-bold">{{ item.Name }}</span>      @if (getAddress(item)) {        <span class="text-muted"> — {{ getAddress(item) }}</span>      }    </ng-template>    <ng-template ng-option-tmp let-item="item">      <div class="fw-bold text-truncate">{{ item.Name }}</div>      <div class="text-muted small text-truncate">{{ getAddress(item) }}</div>    </ng-template>    <ng-template ng-footer-tmp>      <button type="button" class="btn btn-link text-decoration-none w-100 text-start px-2 py-1"        (click)="openAddLocationModal()">        <i class="fa fa-plus me-2"></i>{{ \'LOCATION_PICKER.ADD_NEW\' | translate }}      </button>    </ng-template>  </ng-select></div><!-- Add New Location modal --><ng-template #addLocationTemplate>  <div class="modal-header border-0 p-0">    <button type="button" class="btn-close btn-close-white close-button float-end pe-3 ps-0"      aria-label="Close" (click)="closeAddLocationModal()"></button>  </div>  <div class="modal-body bg-white py-4">    <h6 class="modal-title fw-bold pb-3">{{ \'LOCATION_PICKER.ADD_MODAL_TITLE\' | translate }}</h6>    <div class="mb-3">      <label class="mb-1 d-block">{{ \'LOCATION_PICKER.LOCATION_NAME\' | translate }}        <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>      </label>      <input type="text" class="form-control" name="locationName" [(ngModel)]="newLocation.Name"        [placeholder]="\'LOCATION_PICKER.LOCATION_NAME_PLACEHOLDER\' | translate" />    </div>    <div class="mb-3">      <label class="mb-1 d-block">{{ \'LOCATION_PICKER.STREET\' | translate }}        <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>      </label>      <input type="text" class="form-control" name="street" [(ngModel)]="newLocation.Street"        [placeholder]="\'LOCATION_PICKER.STREET_PLACEHOLDER\' | translate" />    </div>    <div class="mb-3">      <label class="mb-1 d-block">{{ \'LOCATION_PICKER.ADDRESS_LINE2\' | translate }}</label>      <input type="text" class="form-control" name="addressLine2" [(ngModel)]="newLocation.AddressLine"        [placeholder]="\'LOCATION_PICKER.ADDRESS_LINE2_PLACEHOLDER\' | translate" />    </div>    <div class="row">      <div class="col-md-6 mb-3">        <label class="mb-1 d-block">{{ \'LOCATION_PICKER.CITY\' | translate }}          <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>        </label>        <input type="text" class="form-control" name="city" [(ngModel)]="newLocation.City"          [placeholder]="\'LOCATION_PICKER.CITY_PLACEHOLDER\' | translate" />      </div>      <div class="col-md-6 mb-3">        <label class="mb-1 d-block">{{ \'LOCATION_PICKER.STATE\' | translate }}          <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>        </label>        <input type="text" class="form-control" name="state" [(ngModel)]="newLocation.State"          [placeholder]="\'LOCATION_PICKER.STATE_PLACEHOLDER\' | translate" />      </div>    </div>    <div class="row">      <div class="col-md-6 mb-3">        <label class="mb-1 d-block">{{ \'LOCATION_PICKER.ZIP\' | translate }}          <i class="fa fa-asterisk text-danger fw-normal custom-asterisk p-1"></i>        </label>        <input type="text" class="form-control" name="zip" [(ngModel)]="newLocation.PostalCode"          [placeholder]="\'LOCATION_PICKER.ZIP_PLACEHOLDER\' | translate" />      </div>      <div class="col-md-6 mb-3">        <label class="mb-1 d-block">{{ \'LOCATION_PICKER.COUNTRY\' | translate }}</label>        <input type="text" class="form-control" name="country" [(ngModel)]="newLocation.Country" />      </div>    </div>    <div class="d-flex justify-content-end mt-2">      <button class="btn btn-outline-secondary me-2" [disabled]="saving" (click)="closeAddLocationModal()">        {{ \'COMMON.CANCEL\' | translate }}      </button>      <button class="btn btn-primary" [disabled]="!isNewLocationValid() || saving" (click)="saveNewLocation()">        @if (saving) {          <i class="fa fa-spinner fa-spin me-1"></i>        }        {{ \'LOCATION_PICKER.SAVE\' | translate }}      </button>    </div>  </div></ng-template></div>'
+    var COMPONENTS = [{'name': 'AddCommentsComponent', 'selector': 'apt-add-comments'},{'name': 'AdditionalInformationComponent', 'selector': 'apt-additional-information'},{'name': 'AddressComponent', 'selector': 'apt-address'},{'name': 'AddToCartComponent', 'selector': 'apt-add-to-cart'},{'name': 'AlertComponent', 'selector': 'apt-alert'},{'name': 'AssetDropdownButtonComponent', 'selector': 'apt-asset-dropdown-button'},{'name': 'AssetListComponent', 'selector': 'apt-asset-list'},{'name': 'BreadcrumbComponent', 'selector': 'apt-breadcrumb'},{'name': 'CaptchaComponent', 'selector': 'apt-captcha'},{'name': 'CartTotalsViewComponent', 'selector': 'app-cart-totals-view'},{'name': 'CategoryFilterComponent', 'selector': 'apt-category-filter'},{'name': 'ChartComponent', 'selector': 'apt-chart'},{'name': 'ConstraintRuleAlertComponent', 'selector': 'apt-constraint-rule-alert'},{'name': 'ConstraintRuleSidebarComponent', 'selector': 'apt-constraint-rule-sidebar'},{'name': 'CRIconComponent', 'selector': 'apt-cr-constraint-icon'},{'name': 'CRRecommendedProductsComponent', 'selector': 'apt-cr-recommended-products'},{'name': 'DataFilterComponent', 'selector': 'apt-data-filter'},{'name': 'DependentPicklistComponent', 'selector': 'apt-dependent-picklist'},{'name': 'DocumentSelectorComponent', 'selector': 'apt-document-selector'},{'name': 'DotsComponent', 'selector': 'apt-dots'},{'name': 'EmailComposerComponent', 'selector': 'apt-email-composer'},{'name': 'EmailSearchComponent', 'selector': 'apt-email-search'},{'name': 'ErrorPageComponent', 'selector': 'apt-error-page'},{'name': 'FacetFilterComponent', 'selector': 'apt-facet-filter'},{'name': 'FavoriteFilterComponent', 'selector': 'apt-favorite-filter'},{'name': 'FavoriteModalComponent', 'selector': 'apt-favorite-modal'},{'name': 'FilesComponent', 'selector': 'apt-files'},{'name': 'FileUploaderComponent', 'selector': 'apt-file-uploader'},{'name': 'GenerateDocumentComponent', 'selector': 'apt-generate-document'},{'name': 'InputDateComponent', 'selector': 'apt-date-range-input'},{'name': 'InputFieldComponent', 'selector': 'apt-input-field'},{'name': 'InputSelectComponent', 'selector': 'apt-input-select'},{'name': 'JumbotronComponent', 'selector': 'apt-jumbotron'},{'name': 'LineitemCardComponent', 'selector': 'apt-lineitem-card'},{'name': 'LineItemMenuComponent', 'selector': 'apt-line-item-menu'},{'name': 'LineItemTableRowComponent', 'selector': 'apt-line-item-table-row'},{'name': 'LocationPickerComponent', 'selector': 'apt-location-picker'},{'name': 'MiniCartComponent', 'selector': 'apt-mini-cart'},{'name': 'MiniProfileComponent', 'selector': 'apt-mini-profile'},{'name': 'OutputFieldComponent', 'selector': 'apt-output-field'},{'name': 'PaymentIntegrationComponent', 'selector': 'apt-payment-integration'},{'name': 'PopoverComponent', 'selector': 'apt-popover'},{'name': 'PresentDocumentComponent', 'selector': 'apt-present-document'},{'name': 'PriceComponent', 'selector': 'apt-price'},{'name': 'PriceModalComponent', 'selector': 'apt-price-modal'},{'name': 'PriceSummaryComponent', 'selector': 'apt-price-summary'},{'name': 'ProductAttributeComponent', 'selector': 'apt-product-attribute'},{'name': 'ProductCardComponent', 'selector': 'apt-product-card'},{'name': 'ProductCarouselComponent', 'selector': 'apt-product-carousel'},{'name': 'ProductCompareComponent', 'selector': 'apt-product-compare'},{'name': 'ProductConfigurationComponent', 'selector': 'apt-product-configuration'},{'name': 'ProductConfigurationSummaryComponent', 'selector': 'apt-product-configuration-summary'},{'name': 'ProductDrawerComponent', 'selector': 'apt-product-drawer'},{'name': 'ProductImagesComponent', 'selector': 'apt-product-images'},{'name': 'ProductSearchComponent', 'selector': 'apt-product-search'},{'name': 'ProductTypeFilterComponent', 'selector': 'apt-product-type-filter'},{'name': 'PromotionComponent', 'selector': 'apt-promotion'},{'name': 'PromotionModalComponent', 'selector': 'apt-pr-modal'},{'name': 'QuickAddComponent', 'selector': 'app-quick-add'},{'name': 'RecipientsComponent', 'selector': 'apt-recipients'},{'name': 'ReplaceProductModalComponent', 'selector': 'apt-replace-product-modal'},{'name': 'RevalidateCartModalComponent', 'selector': 'apt-revalidate-cart-modal'},{'name': 'SelectAllComponent', 'selector': 'apt-select-all'},{'name': 'SendForSignatureComponent', 'selector': 'apt-send-for-signature'},{'name': 'SpinnerComponent', 'selector': 'apt-spinner'},{'name': 'TableComponent', 'selector': 'apt-table'},{'name': 'TableRowSubItemComponent', 'selector': 'apt-table-row-sub-item'},{'name': 'TaxBreakupComponent', 'selector': 'apt-tax-breakup-popover'},{'name': 'ViewCommentsComponent', 'selector': 'apt-view-comments'},{'name': 'WizardComponent', 'selector': 'apt-wizard'}];
+    var DIRECTIVES = [{'name': 'AutoFocusDirective', 'selector': '[aptAutoFocus]'}];
+    var ACTUAL_COMPONENT = {'name': 'LocationPickerComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'LocationPickerComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
